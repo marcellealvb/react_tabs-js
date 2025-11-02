@@ -1,5 +1,5 @@
 import React from 'react';
-
+// dont forget the domo link
 export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
   const activeTab = tabs.find(tab => tab.id === activeTabId) || tabs[0];
 
