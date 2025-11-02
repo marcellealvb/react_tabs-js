@@ -13,18 +13,18 @@ export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
               className={tab.id === activeTab.id ? 'is-active' : ''}
               data-cy="Tab"
             >
-              <button
-                type="button"
-                onClick={() => {
+              <a
+                href={`#${tab.id}`}
+                data-cy="TabLink"
+                onClick={e => {
+                  e.preventDefault(); // evita rolagem para o fragmento
                   if (tab.id !== activeTab.id) {
                     onTabSelected(tab.id);
                   }
                 }}
-                data-cy="TabLink"
-                className="Tab-Button mx-2"
               >
                 {tab.title}
-              </button>
+              </a>
             </li>
           ))}
         </ul>
